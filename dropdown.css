@@ -1,0 +1,135 @@
+/*アコーディオン全体*/
+.dropdown {
+  width: 100%;
+}
+.dropdown input {
+  display: none; /*チェックボックスを隠す*/
+}
+/*バー部分*/
+.dropdown label {
+  cursor :pointer;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  margin: 0 0 10px;
+  padding: 1.5vw;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+}
+.dropdown svg {
+  color: #016EA9;
+  width: 1vw;
+  height: 100%;
+}
+/*開いたときに表示される部分*/
+.dropdown ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 1px;
+}
+.dropdown li {
+  height: 0;
+  font-size: 1vw;
+  line-height: 1.5;
+  overflow-y: hidden;
+  transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+}
+#toggle1:checked ~ #menu1 li,
+#toggle2:checked ~ #menu2 li,
+#toggle3:checked ~ #menu3 li,
+#toggle4:checked ~ #menu4 li,
+#toggle5:checked ~ #menu5 li,
+#toggle6:checked ~ #menu6 li,
+#toggle7:checked ~ #menu7 li,
+#toggle8:checked ~ #menu8 li,
+#toggle9:checked ~ #menu9 li,
+#toggle10:checked ~ #menu10 li,
+#toggle11:checked ~ #menu11 li,
+#toggle12:checked ~ #menu12 li,
+#toggle13:checked ~ #menu13 li,
+#toggle14:checked ~ #menu14 li,
+#toggle15:checked ~ #menu15 li {
+  height: auto; /*開いたときに表示されるliの高さ*/
+  opacity: 1;
+  padding: 10px;
+}
+#at_toggle1:checked ~ #at_menu1 li,
+#at_toggle2:checked ~ #at_menu2 li,
+#at_toggle3:checked ~ #at_menu3 li,
+#at_toggle4:checked ~ #at_menu4 li,
+#at_toggle5:checked ~ #at_menu5 li {
+  height: auto; /*開いたときに表示されるliの高さ*/
+  opacity: 1;
+  padding: 5px 10px;
+}
+#at_toggle1:checked ~ #at_menu1 .atbr_txt,
+#at_toggle2:checked ~ #at_menu2 .atbr_txt,
+#at_toggle3:checked ~ #at_menu3 .atbr_txt,
+#at_toggle4:checked ~ #at_menu4 .atbr_txt,
+#at_toggle5:checked ~ #at_menu5 .atbr_txt {
+  height: auto; /*開いたときに表示されるliの高さ*/
+  opacity: 1;
+  padding-bottom: 25px;
+}
+#at_toggle2:checked ~ #at_menu2 .atbr_ttl_mb {
+  padding-bottom: 25px;
+}
+#at_toggle3:checked ~ #at_menu3 .atbr_ttl_mb {
+  padding-bottom: 25px;
+}
+#at_toggle5:checked ~ #at_menu5 .atbr_ttl_mb {
+  padding-bottom: 25px;
+}
+ /*開いたときの下の余白*/
+#toggle1:checked ~ #menu1 li:last-child,
+#toggle2:checked ~ #menu2 li:last-child,
+#toggle3:checked ~ #menu3 li:last-child,
+#toggle4:checked ~ #menu4 li:last-child,
+#toggle5:checked ~ #menu5 li:last-child,
+#toggle6:checked ~ #menu6 li:last-child,
+#toggle7:checked ~ #menu7 li:last-child,
+#toggle8:checked ~ #menu8 li:last-child,
+#toggle9:checked ~ #menu9 li:last-child,
+#toggle10:checked ~ #menu10 li:last-child,
+#toggle11:checked ~ #menu11 li:last-child,
+#toggle12:checked ~ #menu12 li:last-child,
+#toggle13:checked ~ #menu13 li:last-child,
+#toggle14:checked ~ #menu14 li:last-child,
+#toggle15:checked ~ #menu15 li:last-child {
+  margin-bottom: 20px;
+}
+/*閉じた状態の矢印描画*/
+.dropdown label:after{
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  border-top: #E5E5E5 2px solid;
+  border-right: #E5E5E5 2px solid;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position:absolute;
+  right: 2%;
+  top: 0;
+  bottom: 15%;
+  margin: auto;
+}
+/*開いた状態の矢印描画*/
+.dropdown input[type=checkbox]:checked + label:after{
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  border-top: #E5E5E5 2px solid;
+  border-right: #E5E5E5 2px solid;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position:absolute;
+  right: 2%;
+  top: 7%;
+  bottom: 0;
+  margin: auto;
+}
